@@ -5,11 +5,12 @@ import { Nav, Image } from "react-bootstrap";
 const SignedInLinks = () => {
 	return (
 		<Nav className="mr-auto">
-			<Nav.Link as={Link} to="/" href="#features">
+			<Nav.Link as={Link} to="/userprofile">
 				Profile
 			</Nav.Link>
-			<Nav.Link href="#pricing">New Post</Nav.Link>
-
+			<Nav.Link as={Link} to="/create">
+				New Post
+			</Nav.Link>
 			<Nav.Link as={Link} to="/">
 				Log Out
 			</Nav.Link>

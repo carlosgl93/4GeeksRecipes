@@ -4,9 +4,13 @@ import ScrollToTop from "./component/layout/scrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import injectContext from "./store/appContext";
-import { Dashboard } from "./component/dashboard/Dashboard";
+import Dashboard from "./component/dashboard/Dashboard";
 import { MyNav } from "./component/layout/Navbar";
 import { Footer } from "./component/layout/footer";
+import PostDetails from "./component/posts/PostDetails";
+import SignIn from "./component/auth/SignIn";
+import SignUp from "./component/auth/SignUp";
+import CreatePost from "./component/posts/CreatePost";
 
 //create your first component
 export const Layout = () => {
@@ -21,6 +25,10 @@ export const Layout = () => {
 					<MyNav />
 					<Switch>
 						<Route exact path="/" component={Dashboard} />
+						<Route path="/post/:id" component={PostDetails} />
+						<Route path="/signin" component={SignIn} />
+						<Route path="/signup" component={SignUp} />
+						<Route path="/create" component={CreatePost} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />

@@ -1,3 +1,30 @@
 /* 
     General Styles
 */
+
+html {
+    min-height: 100%;
+}
+
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: black;
+    min-height: 100%;
+}
+
+.navbar, .nav, Nav, Navbar {
+    background-color: white;
+    color: #00d4ff;
+}
+
+form {
+    padding: 0 10%;
+    margin-top: 60px;
+}
+
+form button, form h5 {
+    margin: 20px 0;
+}
+
+

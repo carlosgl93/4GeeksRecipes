@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 
-class SignIn extends Component {
+class SignUp extends Component {
 	state = {
 		email: "",
-		password: ""
+		password: "",
+		firstName: "",
+		lastName: ""
 	};
 
 	handleChange = e => {
@@ -22,7 +24,7 @@ class SignIn extends Component {
 		return (
 			<div>
 				<Form onSubmit={this.handleSubmit}>
-					<h5>Sign In</h5>
+					<h5>Sign Up</h5>
 					<Form.Group controlId="email">
 						<Form.Label>Email address</Form.Label>
 						<Form.Control placeholder="Enter email" onChange={this.handleChange} />
@@ -33,11 +35,19 @@ class SignIn extends Component {
 						<Form.Label>Password</Form.Label>
 						<Form.Control placeholder="Password" onChange={this.handleChange} />
 					</Form.Group>
+					<Form.Group controlId="firstName">
+						<Form.Label>First Name</Form.Label>
+						<Form.Control placeholder="Jhon" onChange={this.handleChange} />
+					</Form.Group>
+					<Form.Group controlId="lastName">
+						<Form.Label>Last Name</Form.Label>
+						<Form.Control placeholder="Doe" onChange={this.handleChange} />
+					</Form.Group>
 					<Form.Group controlId="formBasicCheckbox">
 						<Form.Check type="checkbox" label="Check me out" />
 					</Form.Group>
 					<Button variant="primary" type="submit">
-						Login
+						Sign Up
 					</Button>
 				</Form>
 			</div>
@@ -45,4 +55,4 @@ class SignIn extends Component {
 	}
 }
 
-export default SignIn;
+export default SignUp;
