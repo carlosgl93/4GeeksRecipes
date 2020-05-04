@@ -13,10 +13,19 @@ body {
     min-height: 100%;
 }
 
-.navbar, .nav, Nav, Navbar {
-    background-color: white;
-    color: #00d4ff;
+.navbar, .nav, Nav, .card-body {
+    background-color: #EDE6E3;
+    color: #B74F6F;
 }
+
+.card {
+    margin: 2.5vh 10px;
+}
+
+nav {
+    color: #B74F6F;
+}
+
 
 form {
     padding: 0 10%;

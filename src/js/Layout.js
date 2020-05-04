@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/layout/scrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,12 +11,22 @@ import PostDetails from "./component/posts/PostDetails";
 import SignIn from "./component/auth/SignIn";
 import SignUp from "./component/auth/SignUp";
 import CreatePost from "./component/posts/CreatePost";
+import appContext from "./store/appContext";
+import { Context } from "./store/appContext";
+import { getState } from "./store/flux";
 
-//create your first component
 export const Layout = () => {
-	//the basename is used when your project is published in a subdirectory and not in the root of the domain
-	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
+
+	// eslint-disable-next-line no-console
+	console.log(Context);
+	const { actions } = useContext(Context);
+
+	useEffect(() => {
+		// eslint-disable-next-line no-console
+		console.log("COMPONENT DID MOUNT");
+		actions.loadRandomRecipe();
+	}, []);
 
 	return (
 		<div className="d-flex flex-column h-100">

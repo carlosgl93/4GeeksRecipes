@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
 import SignedInLinks from "./SignedInLinks";
@@ -6,7 +6,7 @@ import SignedOut from "./SignedOut.js";
 
 export const MyNav = () => {
 	return (
-		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+		<Navbar className="navbar" collapseOnSelect expand="lg">
 			<Navbar.Brand as={Link} to="/">
 				4GeeksProject
 			</Navbar.Brand>
