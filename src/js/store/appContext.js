@@ -6,23 +6,41 @@ export const Context = React.createContext(null);
 
 // This function injects the global store to any view/component where you want to use it, we will inject the context to layout.js, you can see it here:
 // https://github.com/4GeeksAcademy/react-hello-webapp/blob/master/src/js/layout.js#L35
+
 const injectContext = PassedComponent => {
 	const StoreWrapper = props => {
 		//this will be passed as the contenxt value
+
 		const [state, setState] = useState(
+			// getState({
+
+			// getStore: () => state.store,
+			// getActions: () => state.actions,
+			// setStore: updatedStore =>
+			// 	setState({
+			// 		store: Object.assign(state.store, updatedStore),
+			// 		actions: { ...state.actions }
+			// 	})
+			// })
 			getState({
-				getStore: () => state.store,
-				getActions: () => state.actions,
-				setStore: updatedStore =>
+				getStore: key => state.key.store,
+				getActions: key => state.key.actions,
+				setStore: (updatedStore, key) =>
 					setState({
-						store: Object.assign(state.store, updatedStore),
-						actions: { ...state.actions }
+						[key]: {
+							store: Object.assign(state.key.store, updatedStore),
+							actions: { ...state.key.actions }
+						}
 					})
 			})
 		);
 
 		useEffect(() => {
-			state.actions.loadRandomRecipe();
+			state.recipes.actions.loadRandomRecipe();
+
+			// state.actions.loadRecetaBuscada();
+			// state.actions.authContext();
+
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime
